@@ -40,10 +40,12 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         threePlayerBtn?.setOnClickListener {
-            Toast.makeText(this, "TODO: Make three player activity", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,
+                "TODO: Make three player activity", Toast.LENGTH_SHORT).show()
         }
         fourPlayerBtn?.setOnClickListener {
-            Toast.makeText(this, "TODO: Make four player activity", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,
+                "TODO: Make four player activity", Toast.LENGTH_SHORT).show()
         }
 
     }

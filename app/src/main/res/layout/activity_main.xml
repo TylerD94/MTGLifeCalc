@@ -29,7 +29,7 @@
             android:layout_height="100dp"
             android:layout_marginHorizontal="15dp"
             android:text="20"
-            android:textSize="50sp"/>
+            android:textSize="35sp"/>
 
         <Button
             android:id="@+id/btn_set_30_hp"
@@ -37,7 +37,7 @@
             android:layout_height="100dp"
             android:layout_marginHorizontal="15dp"
             android:text="30"
-            android:textSize="50sp"/>
+            android:textSize="35sp"/>
 
         <Button
             android:id="@+id/btn_set_40_hp"
@@ -45,7 +45,7 @@
             android:layout_height="100dp"
             android:layout_marginHorizontal="15dp"
             android:text="40"
-            android:textSize="50sp"/>
+            android:textSize="35sp"/>
 
     </LinearLayout>
 

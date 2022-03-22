@@ -34,24 +34,43 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#0000FF"
-                android:text="+"
-                android:textSize="50sp"/>
+                android:background="#00000000"/>
 
             <Button
                 android:id="@+id/btn_p2_hp_down"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#FF0000"
-                android:text="-"
-                android:textSize="50sp"/>
-
+                android:background="#00000000"/>
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="-"
+            android:textSize="100sp"
+            android:textColor="#888888"
+            android:gravity="center"
+            android:layout_alignRight="@id/tv_p2_hp"
+            android:padding="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="+"
+            android:textSize="100sp"
+            android:textColor="#888888"
+            android:gravity="center"
+            android:layout_alignLeft="@id/tv_p2_hp"
+            android:padding="20dp"/>
+
     </RelativeLayout>
 
+    <!-- TODO: Implement control buttons -->
+    <!-- Button to change number of players -->
+    <!-- Button to change life -->
+    <!-- Reset button -->
 
     <RelativeLayout
         android:id="@+id/rl_p1_hp"
@@ -80,14 +99,14 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#00000000" />
+                android:background="#00000000" />
 
             <Button
                 android:id="@+id/btn_p1_hp_up"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:backgroundTint="#00000000"/>
+                android:background="#00000000"/>
 
         </LinearLayout>
 

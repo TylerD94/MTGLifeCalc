@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/MTGLifeCalc/app/src/main/res/layout/activity_main.xml" value="0.32472826086956524" />
+        <entry key="..\:/Android/MTGLifeCalc/app/src/main/res/layout/activity_two_player_screen.xml" value="0.33" />
         <entry key="..\:/Multi-Platform/Bluetooth_Practice/MTGLifeCalc/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_two_player_screen.xml" value="0.19270833333333334" />
