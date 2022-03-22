@@ -4,57 +4,56 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.mtglifecalc.databinding.ActivityTwoPlayerScreenBinding
 
 class TwoPlayerScreen : AppCompatActivity() {
 
-    var p1HpTv : TextView? = null
-    var p1HpUp : Button? = null
-    var p1HpDown : Button? = null
-
-    var p2HpTv: TextView? = null
-    var p2HpUp : Button? = null
-    var p2HpDown: Button? = null
+    private var binding: ActivityTwoPlayerScreenBinding? = null
 
     var p1Hp = 0
     var p2Hp = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_two_player_screen)
+        binding = ActivityTwoPlayerScreenBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
+        init()
+    }
+
+    private fun init() {
+        // Set starting life totals and display on start
         p1Hp = intent.getIntExtra("Starting_Life", 40)
         p2Hp = intent.getIntExtra("Starting_Life", 40)
 
-        p1HpTv = findViewById(R.id.tv_p1_hp)
-        p2HpTv = findViewById(R.id.tv_p2_hp)
+        binding?.tvP1Hp?.text = p1Hp.toString()
+        binding?.tvP2Hp?.text = p2Hp.toString()
 
-        p1HpUp = findViewById(R.id.btn_p1_hp_up)
-        p1HpDown = findViewById(R.id.btn_p1_hp_down)
-        p2HpUp = findViewById(R.id.btn_p2_hp_up)
-        p2HpDown = findViewById(R.id.btn_p2_hp_down)
-
-        p1HpTv?.text = p1Hp.toString()
-        p2HpTv?.text = p2Hp.toString()
-
-
-        p1HpUp?.setOnClickListener {
+        // TODO: Change these from onClickListener to a way that responds to held inputs.
+        binding?.btnP1HpUp?.setOnClickListener {
             p1Hp++
-            p1HpTv?.text = p1Hp.toString()
+            binding?.tvP1Hp?.text = p1Hp.toString()
         }
 
-        p1HpDown?.setOnClickListener {
+        binding?.btnP1HpDown?.setOnClickListener {
             p1Hp--
-            p1HpTv?.text = p1Hp.toString()
+            binding?.tvP1Hp?.text = p1Hp.toString()
         }
 
-        p2HpUp?.setOnClickListener {
+        binding?.btnP2HpUp?.setOnClickListener {
             p2Hp++
-            p2HpTv?.text = p2Hp.toString()
+            binding?.tvP2Hp?.text = p2Hp.toString()
         }
 
-        p2HpDown?.setOnClickListener {
+        binding?.btnP2HpDown?.setOnClickListener {
             p2Hp--
-            p2HpTv?.text = p2Hp.toString()
+            binding?.tvP2Hp?.text = p2Hp.toString()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        binding = null
     }
 }
