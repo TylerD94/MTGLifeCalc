@@ -1,36 +1,50 @@
 package com.example.mtglifecalc
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    var p1_hp_tv : TextView? = null
-    var p1_hp_up : Button? = null
-    var p1_hp_down : Button? = null
+    var startingHp : Int = 40 // Default if no button was selected
+    var startingHp20Btn : Button? = null
+    var startingHp30Btn : Button? = null
+    var startingHp40Btn : Button? = null
+
+    var twoPlayerBtn : Button? = null
+    var threePlayerBtn : Button? = null
+    var fourPlayerBtn : Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var p1_hp = 40
+        startingHp20Btn = findViewById(R.id.btn_set_20_hp)
+        startingHp30Btn = findViewById(R.id.btn_set_30_hp)
+        startingHp40Btn = findViewById(R.id.btn_set_40_hp)
 
-        p1_hp_tv = findViewById(R.id.tv_p1_hp)
-        p1_hp_up = findViewById(R.id.btn_p1_hp_up)
-        p1_hp_down = findViewById(R.id.btn_p1_hp_down)
+        twoPlayerBtn = findViewById(R.id.btn_set_2_players)
+        threePlayerBtn = findViewById(R.id.btn_set_3_players)
+        fourPlayerBtn = findViewById(R.id.btn_set_4_players)
 
-        p1_hp_tv?.text = p1_hp.toString()
+        startingHp20Btn?.setOnClickListener { startingHp = 20 }
+        startingHp30Btn?.setOnClickListener { startingHp = 30 }
+        startingHp40Btn?.setOnClickListener { startingHp = 40 }
 
-        p1_hp_up?.setOnClickListener {
-            p1_hp++
-            p1_hp_tv?.text = p1_hp.toString()
+        twoPlayerBtn?.setOnClickListener {
+            val startTwoPlayerGame = Intent(this, TwoPlayerScreen::class.java)
+            startTwoPlayerGame.putExtra("Starting_Life", startingHp)
+            startActivity(startTwoPlayerGame)
+            finish()
+        }
+        threePlayerBtn?.setOnClickListener {
+            Toast.makeText(this, "TODO: Make three player activity", Toast.LENGTH_SHORT).show()
+        }
+        fourPlayerBtn?.setOnClickListener {
+            Toast.makeText(this, "TODO: Make four player activity", Toast.LENGTH_SHORT).show()
         }
 
-        p1_hp_down?.setOnClickListener {
-            p1_hp--
-            p1_hp_tv?.text = p1_hp.toString()
-        }
     }
 }

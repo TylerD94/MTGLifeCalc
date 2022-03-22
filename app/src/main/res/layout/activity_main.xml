@@ -8,111 +8,87 @@
     android:orientation="vertical"
     android:gravity="center">
 
-    <RelativeLayout
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:text="Starting life"
+        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"/>
 
-        <TextView
-            android:id="@+id/tv_p2_hp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_set_20_hp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="15dp"
+            android:text="20"
+            android:textSize="50sp"/>
+
+        <Button
+            android:id="@+id/btn_set_30_hp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="15dp"
+            android:text="30"
+            android:textSize="50sp"/>
+
+        <Button
+            android:id="@+id/btn_set_40_hp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="15dp"
             android:text="40"
-            android:textSize="100sp"
-            android:gravity="center"
-            android:rotation="180"/>
+            android:textSize="50sp"/>
 
-        <LinearLayout
-            android:id="@+id/ll_p2_btns"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+    </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_p2_hp_up"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#0000FF"
-                android:text="+"
-                android:textSize="50sp"/>
-
-            <Button
-                android:id="@+id/btn_p2_hp_down"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#FF0000"
-                android:text="-"
-                android:textSize="50sp"/>
-
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/rl_p1_hp"
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:text="Number of Players"
+        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"/>
 
-        <TextView
-            android:id="@+id/tv_p1_hp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="40"
-            android:textSize="100sp"
-            android:gravity="center"
-            android:textColor="#888888"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp">
 
-        <LinearLayout
-            android:id="@+id/ll_p1_btns"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+        <Button
+            android:id="@+id/btn_set_2_players"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="15dp"
+            android:text="2"
+            android:textSize="50sp"/>
 
-            <Button
-                android:id="@+id/btn_p1_hp_down"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000" />
+        <Button
+            android:id="@+id/btn_set_3_players"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="15dp"
+            android:text="3"
+            android:textSize="50sp"/>
 
-            <Button
-                android:id="@+id/btn_p1_hp_up"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="#00000000"/>
+        <Button
+            android:id="@+id/btn_set_4_players"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="15dp"
+            android:text="4"
+            android:textSize="50sp"/>
 
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="-"
-            android:textSize="100sp"
-            android:textColor="#888888"
-            android:gravity="center"
-            android:layout_alignLeft="@id/tv_p1_hp"
-            android:padding="20dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="+"
-            android:textSize="100sp"
-            android:textColor="#888888"
-            android:gravity="center"
-            android:layout_alignRight="@id/tv_p1_hp"
-            android:padding="20dp"/>
-
-    </RelativeLayout>
-
+    </LinearLayout>
 
 
 </LinearLayout>
