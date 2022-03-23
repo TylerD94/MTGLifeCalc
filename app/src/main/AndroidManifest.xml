@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MTGLifeCalc">
         <activity
+            android:name=".ThreePlayerScreen"
+            android:exported="false" />
+        <activity
             android:name=".TwoPlayerScreen"
             android:exported="false" />
         <activity
