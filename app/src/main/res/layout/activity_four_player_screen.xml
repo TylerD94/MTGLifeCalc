@@ -140,65 +140,131 @@
     <!-- Button to change life -->
     <!-- Reset button -->
 
-    <RelativeLayout
-        android:id="@+id/rl_p1_hp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:rotation="90">
 
-        <TextView
-            android:id="@+id/tv_p1_hp"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="40"
-            android:textSize="100sp"
-            android:gravity="center"
-            android:textColor="#888888"/>
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-        <LinearLayout
-            android:id="@+id/ll_p1_btns"
+            <TextView
+                android:id="@+id/tv_p1_hp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="40"
+                android:textSize="100sp"
+                android:gravity="center"
+                android:rotation="180"/>
+
+            <LinearLayout
+                android:id="@+id/ll_p1_btns"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_p1_hp_down"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"/>
+
+                <Button
+                    android:id="@+id/btn_p1_hp_up"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textSize="100sp"
+                android:textColor="#888888"
+                android:layout_alignStart="@+id/tv_p1_hp"
+                android:gravity="center"
+                android:padding="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="+"
+                android:layout_alignEnd="@+id/tv_p1_hp"
+                android:gravity="center"
+                android:textSize="100sp"
+                android:textColor="#888888"
+                android:padding="40dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <Button
-                android:id="@+id/btn_p1_hp_down"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tv_p4_hp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#00000000" />
+                android:text="40"
+                android:textSize="100sp"
+                android:gravity="center"/>
 
-            <Button
-                android:id="@+id/btn_p1_hp_up"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/ll_p4_btns"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="#00000000"/>
+                android:orientation="horizontal"
+                android:gravity="center">
 
-        </LinearLayout>
+                <Button
+                    android:id="@+id/btn_p4_hp_up"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="-"
-            android:textSize="100sp"
-            android:textColor="#888888"
-            android:gravity="center"
-            android:layout_alignLeft="@id/tv_p1_hp"
-            android:padding="20dp"/>
+                <Button
+                    android:id="@+id/btn_p4_hp_down"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="+"
-            android:textSize="100sp"
-            android:textColor="#888888"
-            android:gravity="center"
-            android:layout_alignRight="@id/tv_p1_hp"
-            android:padding="20dp"/>
+            </LinearLayout>
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textSize="100sp"
+                android:textColor="#888888"
+                android:gravity="center"
+                android:layout_alignEnd="@id/tv_p4_hp"
+                android:padding="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="+"
+                android:textSize="100sp"
+                android:textColor="#888888"
+                android:gravity="center"
+                android:layout_alignStart="@id/tv_p4_hp"
+                android:padding="40dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 
 

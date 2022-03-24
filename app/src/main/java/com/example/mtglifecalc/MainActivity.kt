@@ -29,12 +29,16 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         binding?.btnSet3Players?.setOnClickListener {
-            Toast.makeText(this,
-                "TODO: Make three player activity", Toast.LENGTH_SHORT).show()
+            val startThreePlayerGame = Intent(this, ThreePlayerScreen::class.java)
+            startThreePlayerGame.putExtra("Starting_Life", startingHp)
+            startActivity(startThreePlayerGame)
+            finish()
         }
         binding?.btnSet4Players?.setOnClickListener {
-            Toast.makeText(this,
-                "TODO: Make four player activity", Toast.LENGTH_SHORT).show()
+            val startFourPlayerGame = Intent(this, FourPlayerScreen::class.java)
+            startFourPlayerGame.putExtra("Starting_Life", startingHp)
+            startActivity(startFourPlayerGame)
+            finish()
         }
 
     }
