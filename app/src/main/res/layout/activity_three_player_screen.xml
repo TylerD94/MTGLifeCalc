@@ -139,6 +139,22 @@
     <!-- Button to change number of players -->
     <!-- Button to change life -->
     <!-- Reset button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_reset_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="reset"
+            android:textSize="20sp"
+            android:backgroundTint="#00000000"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/rl_p1_hp"

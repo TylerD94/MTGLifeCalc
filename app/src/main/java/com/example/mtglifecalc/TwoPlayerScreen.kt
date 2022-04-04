@@ -49,6 +49,14 @@ class TwoPlayerScreen : AppCompatActivity() {
             p2Hp--
             binding?.tvP2Hp?.text = p2Hp.toString()
         }
+
+        binding?.btnResetGame?.setOnClickListener {
+            p1Hp = intent.getIntExtra("Starting_Life", 40)
+            p2Hp = intent.getIntExtra("Starting_Life", 40)
+
+            binding?.tvP1Hp?.text = p1Hp.toString()
+            binding?.tvP2Hp?.text = p2Hp.toString()
+        }
     }
 
     override fun onDestroy() {

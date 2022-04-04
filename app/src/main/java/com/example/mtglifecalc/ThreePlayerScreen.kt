@@ -62,6 +62,16 @@ class ThreePlayerScreen : AppCompatActivity() {
             p3Hp--
             binding?.tvP3Hp?.text = p3Hp.toString()
         }
+
+        binding?.btnResetGame?.setOnClickListener {
+            p1Hp = intent.getIntExtra("Starting_Life", 40)
+            p2Hp = intent.getIntExtra("Starting_Life", 40)
+            p3Hp = intent.getIntExtra("Starting_Life", 40)
+
+            binding?.tvP1Hp?.text = p1Hp.toString()
+            binding?.tvP2Hp?.text = p2Hp.toString()
+            binding?.tvP3Hp?.text = p3Hp.toString()
+        }
     }
 
     override fun onDestroy() {
