@@ -15,7 +15,7 @@
         android:layout_marginHorizontal="15dp"
         android:text="20"
         android:textSize="35sp"
-        android:background="@drawable/border"/>
+        android:background="@drawable/button"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_set_30_hp"
@@ -24,7 +24,7 @@
         android:layout_marginHorizontal="15dp"
         android:text="30"
         android:textSize="35sp"
-        android:background="@drawable/border"/>
+        android:background="@drawable/button"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_set_40_hp"
@@ -33,6 +33,6 @@
         android:layout_marginHorizontal="15dp"
         android:text="40"
         android:textSize="35sp"
-        android:background="@drawable/border"/>
+        android:background="@drawable/button"/>
 
 </LinearLayout>

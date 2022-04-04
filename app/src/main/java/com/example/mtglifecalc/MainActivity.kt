@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.example.mtglifecalc.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,9 +19,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
-        binding?.btnSet20Hp?.setOnClickListener { startingHp = 20 }
-        binding?.btnSet30Hp?.setOnClickListener { startingHp = 30 }
-        binding?.btnSet40Hp?.setOnClickListener { startingHp = 40 }
+        binding?.btnSet20Hp?.setOnClickListener {
+            startingHp = 20
+            setButtonSelected(binding?.btnSet20Hp as AppCompatButton)
+        }
+        binding?.btnSet30Hp?.setOnClickListener {
+            startingHp = 30
+            setButtonSelected(binding?.btnSet30Hp as AppCompatButton)
+        }
+        binding?.btnSet40Hp?.setOnClickListener {
+            startingHp = 40
+            setButtonSelected(binding?.btnSet40Hp as AppCompatButton)
+        }
 
         binding?.btnSet2Players?.setOnClickListener {
             val startTwoPlayerGame = Intent(this, TwoPlayerScreen::class.java)
@@ -40,8 +50,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(startFourPlayerGame)
             finish()
         }
+    }
 
+    private fun setButtonDefault() {
+        binding?.btnSet20Hp?.setBackgroundResource(R.drawable.button)
+        binding?.btnSet30Hp?.setBackgroundResource(R.drawable.button)
+        binding?.btnSet40Hp?.setBackgroundResource(R.drawable.button)
+    }
 
+    private fun setButtonSelected(button: AppCompatButton) {
+        setButtonDefault()
+        button.setBackgroundResource(R.drawable.button_selected)
     }
 
     override fun onDestroy() {
