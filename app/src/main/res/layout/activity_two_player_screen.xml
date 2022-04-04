@@ -83,7 +83,15 @@
             android:layout_height="wrap_content"
             android:text="reset"
             android:textSize="20sp"
-            android:backgroundTint="#00000000"
+            android:textColor="@color/black"
+            android:background="@drawable/border"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_set_starting_life"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Life"
+            android:textSize="20sp"
             android:textColor="@color/black"
             android:background="@drawable/border"/>
 
