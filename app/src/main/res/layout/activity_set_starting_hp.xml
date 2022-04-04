@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_set_20_hp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="15dp"
+        android:text="20"
+        android:textSize="35sp"
+        android:background="@drawable/button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_set_30_hp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="15dp"
+        android:text="30"
+        android:textSize="35sp"
+        android:background="@drawable/button"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_set_40_hp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="15dp"
+        android:text="40"
+        android:textSize="35sp"
+        android:background="@drawable/button"/>
+
+</LinearLayout>
