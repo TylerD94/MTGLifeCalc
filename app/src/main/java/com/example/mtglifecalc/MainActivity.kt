@@ -19,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
+        init()
+        startGame()
+    }
+
+    private fun init() {
         binding?.btnSet20Hp?.setOnClickListener {
             startingHp = 20
             setButtonSelected(binding?.btnSet20Hp as AppCompatButton)
@@ -31,7 +36,9 @@ class MainActivity : AppCompatActivity() {
             startingHp = 40
             setButtonSelected(binding?.btnSet40Hp as AppCompatButton)
         }
+    }
 
+    private fun startGame() {
         binding?.btnSet2Players?.setOnClickListener {
             val startTwoPlayerGame = Intent(this, TwoPlayerScreen::class.java)
             startTwoPlayerGame.putExtra("Starting_Life", startingHp)
