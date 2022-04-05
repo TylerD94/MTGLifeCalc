@@ -10,9 +10,9 @@ class TwoPlayerScreen : AppCompatActivity() {
 
     private var binding: ActivityTwoPlayerScreenBinding? = null
 
-    var startingHp = 40
-    var p1Hp = 0
-    var p2Hp = 0
+    private var startingHp = 40
+    private var p1Hp = 0
+    private var p2Hp = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +25,7 @@ class TwoPlayerScreen : AppCompatActivity() {
     private fun init() {
         // Set starting life totals and display on start
         startingHp = intent.getIntExtra("Starting_Life", 40)
-        p1Hp = startingHp
-        p2Hp = startingHp
-
-        binding?.tvP1Hp?.text = p1Hp.toString()
-        binding?.tvP2Hp?.text = p2Hp.toString()
+        setStartingHp()
 
         // TODO: Change these from onClickListener to a way that responds to held inputs.
         binding?.btnP1HpUp?.setOnClickListener {
@@ -62,6 +58,10 @@ class TwoPlayerScreen : AppCompatActivity() {
     }
 
     private fun resetGame() {
+        setStartingHp()
+    }
+
+    private fun setStartingHp() {
         p1Hp = startingHp
         p2Hp = startingHp
 

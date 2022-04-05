@@ -3,8 +3,6 @@ package com.example.mtglifecalc
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import com.example.mtglifecalc.databinding.ActivityFourPlayerScreenBinding
 
@@ -12,11 +10,11 @@ class FourPlayerScreen : AppCompatActivity() {
 
     private var binding: ActivityFourPlayerScreenBinding? = null
 
-    var startingHp = 40
-    var p1Hp = 0
-    var p2Hp = 0
-    var p3Hp = 0
-    var p4Hp = 0
+    private var startingHp = 40
+    private var p1Hp = 0
+    private var p2Hp = 0
+    private var p3Hp = 0
+    private var p4Hp = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,15 +27,7 @@ class FourPlayerScreen : AppCompatActivity() {
     private fun init() {
         // Set starting life totals and display on start
         startingHp = intent.getIntExtra("Starting_Life", 40)
-        p1Hp = startingHp
-        p2Hp = startingHp
-        p3Hp = startingHp
-        p4Hp = startingHp
-
-        binding?.tvP1Hp?.text = p1Hp.toString()
-        binding?.tvP2Hp?.text = p2Hp.toString()
-        binding?.tvP3Hp?.text = p3Hp.toString()
-        binding?.tvP4Hp?.text = p4Hp.toString()
+        setStartingHp()
 
         // TODO: Change these from onClickListener to a way that responds to held inputs.
         binding?.btnP1HpUp?.setOnClickListener {
@@ -90,6 +80,11 @@ class FourPlayerScreen : AppCompatActivity() {
     }
 
     private fun resetGame() {
+        setStartingHp()
+
+    }
+
+    private fun setStartingHp() {
         p1Hp = startingHp
         p2Hp = startingHp
         p3Hp = startingHp
@@ -99,7 +94,6 @@ class FourPlayerScreen : AppCompatActivity() {
         binding?.tvP2Hp?.text = p2Hp.toString()
         binding?.tvP3Hp?.text = p3Hp.toString()
         binding?.tvP4Hp?.text = p4Hp.toString()
-
     }
 
     private fun showSetLifeDialog() {
