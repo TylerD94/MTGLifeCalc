@@ -53,7 +53,7 @@ class TwoPlayerScreen : AppCompatActivity() {
         }
 
         binding?.btnSetStartingLife?.setOnClickListener {
-            showSetLifeDialog()
+            SetLifeDialog().showSetLifeDialog(this, this)
         }
     }
 
@@ -67,6 +67,11 @@ class TwoPlayerScreen : AppCompatActivity() {
 
         binding?.tvP1Hp?.text = p1Hp.toString()
         binding?.tvP2Hp?.text = p2Hp.toString()
+    }
+
+    public fun changeHp(hp: Int) {
+        startingHp = hp
+        setStartingHp()
     }
 
     private fun showSetLifeDialog() {
