@@ -2,8 +2,6 @@ package com.example.mtglifecalc
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.example.mtglifecalc.databinding.ActivityMainBinding
@@ -12,7 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     private var binding: ActivityMainBinding? = null
 
-    var startingHp : Int = 40 // Default if no button was selected
+    private var startingHp : Int = 40 // Default if no button was selected
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

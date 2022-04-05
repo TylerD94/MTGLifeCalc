@@ -10,9 +10,9 @@ class TwoPlayerScreen : AppCompatActivity() {
 
     private var binding: ActivityTwoPlayerScreenBinding? = null
 
-    var startingHp = 40
-    var p1Hp = 0
-    var p2Hp = 0
+    private var startingHp = 40
+    private var p1Hp = 0
+    private var p2Hp = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +25,7 @@ class TwoPlayerScreen : AppCompatActivity() {
     private fun init() {
         // Set starting life totals and display on start
         startingHp = intent.getIntExtra("Starting_Life", 40)
-        p1Hp = startingHp
-        p2Hp = startingHp
-
-        binding?.tvP1Hp?.text = p1Hp.toString()
-        binding?.tvP2Hp?.text = p2Hp.toString()
+        setStartingHp()
 
         // TODO: Change these from onClickListener to a way that responds to held inputs.
         binding?.btnP1HpUp?.setOnClickListener {
@@ -57,11 +53,15 @@ class TwoPlayerScreen : AppCompatActivity() {
         }
 
         binding?.btnSetStartingLife?.setOnClickListener {
-            showSetLifeDialog()
+            SetLifeDialog().showSetLifeDialog(this, this)
         }
     }
 
     private fun resetGame() {
+        setStartingHp()
+    }
+
+    private fun setStartingHp() {
         p1Hp = startingHp
         p2Hp = startingHp
 
@@ -69,31 +69,9 @@ class TwoPlayerScreen : AppCompatActivity() {
         binding?.tvP2Hp?.text = p2Hp.toString()
     }
 
-    private fun showSetLifeDialog() {
-        val lifeDialog = Dialog(this)
-        lifeDialog.setContentView(R.layout.activity_set_starting_hp)
-
-        val btnHp20: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_20_hp)
-        val btnHp30: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_30_hp)
-        val btnHp40: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_40_hp)
-
-        btnHp20.setOnClickListener {
-            startingHp = 20
-            resetGame()
-            lifeDialog.dismiss()
-        }
-        btnHp30.setOnClickListener {
-            startingHp = 30
-            resetGame()
-            lifeDialog.dismiss()
-        }
-        btnHp40.setOnClickListener {
-            startingHp = 40
-            resetGame()
-            lifeDialog.dismiss()
-        }
-
-        lifeDialog.show()
+    fun changeHp(hp: Int) {
+        startingHp = hp
+        setStartingHp()
     }
 
     override fun onDestroy() {
