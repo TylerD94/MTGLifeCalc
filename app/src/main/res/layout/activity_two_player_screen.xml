@@ -77,19 +77,19 @@
         android:gravity="center">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_reset_game"
+            android:id="@+id/btn_set_starting_life"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="reset"
+            android:text="Set Life"
             android:textSize="15sp"
             android:textColor="@color/black"
             android:background="@drawable/button"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_set_starting_life"
+            android:id="@+id/btn_reset_game"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Set Life"
+            android:text="reset"
             android:textSize="15sp"
             android:textColor="@color/black"
             android:background="@drawable/button"/>
