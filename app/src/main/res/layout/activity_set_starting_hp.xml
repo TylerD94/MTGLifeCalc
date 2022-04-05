@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     tools:context=".MainActivity"
     android:orientation="horizontal"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="25dp">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_set_20_hp"
