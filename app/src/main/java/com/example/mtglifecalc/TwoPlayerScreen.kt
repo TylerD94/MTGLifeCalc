@@ -4,15 +4,13 @@ import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
+import androidx.lifecycle.ViewModelProvider
 import com.example.mtglifecalc.databinding.ActivityTwoPlayerScreenBinding
 
 class TwoPlayerScreen : AppCompatActivity() {
 
     private var binding: ActivityTwoPlayerScreenBinding? = null
-
-    private var startingHp = 40
-    private var p1Hp = 0
-    private var p2Hp = 0
+    private var viewModel: PlayerViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,60 +21,77 @@ class TwoPlayerScreen : AppCompatActivity() {
     }
 
     private fun init() {
-        // Set starting life totals and display on start
-        startingHp = intent.getIntExtra("Starting_Life", 40)
-        setStartingHp()
+        viewModel = ViewModelProvider(this).get(PlayerViewModel::class.java)
+        viewModel?.startGame(intent.getIntExtra("Starting_Life", 40))
+        displayHp()
 
         // TODO: Change these from onClickListener to a way that responds to held inputs.
         binding?.btnP1HpUp?.setOnClickListener {
-            p1Hp++
-            binding?.tvP1Hp?.text = p1Hp.toString()
+            viewModel?.increaseP1Hp()
+            binding?.tvP1Hp?.text = viewModel?.p1Hp.toString()
         }
 
         binding?.btnP1HpDown?.setOnClickListener {
-            p1Hp--
-            binding?.tvP1Hp?.text = p1Hp.toString()
+            viewModel?.decreaseP1Hp()
+            binding?.tvP1Hp?.text = viewModel?.p1Hp.toString()
         }
 
         binding?.btnP2HpUp?.setOnClickListener {
-            p2Hp++
-            binding?.tvP2Hp?.text = p2Hp.toString()
+            viewModel?.increaseP2Hp()
+            binding?.tvP2Hp?.text = viewModel?.p2Hp.toString()
         }
 
         binding?.btnP2HpDown?.setOnClickListener {
-            p2Hp--
-            binding?.tvP2Hp?.text = p2Hp.toString()
+            viewModel?.decreaseP2Hp()
+            binding?.tvP2Hp?.text = viewModel?.p2Hp.toString()
         }
 
         binding?.btnResetGame?.setOnClickListener {
-            resetGame()
+            viewModel?.startGame(viewModel!!.startingHp)
+            displayHp()
         }
 
         binding?.btnSetStartingLife?.setOnClickListener {
-            SetLifeDialog().showSetLifeDialog(this, this)
+            showSetLifeDialog()
         }
     }
 
-    private fun resetGame() {
-        setStartingHp()
+    private fun displayHp() {
+        binding?.tvP1Hp?.text = viewModel!!.p1Hp.toString()
+        binding?.tvP2Hp?.text = viewModel!!.p2Hp.toString()
     }
 
-    private fun setStartingHp() {
-        p1Hp = startingHp
-        p2Hp = startingHp
+    private fun showSetLifeDialog() {
+        val lifeDialog = Dialog(this)
+        lifeDialog.setContentView(R.layout.activity_set_starting_hp)
 
-        binding?.tvP1Hp?.text = p1Hp.toString()
-        binding?.tvP2Hp?.text = p2Hp.toString()
-    }
+        val btnHp20: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_20_hp)
+        val btnHp30: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_30_hp)
+        val btnHp40: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_40_hp)
 
-    fun changeHp(hp: Int) {
-        startingHp = hp
-        setStartingHp()
+        btnHp20.setOnClickListener {
+            viewModel!!.startGame(20)
+            displayHp()
+            lifeDialog.dismiss()
+        }
+
+        btnHp30.setOnClickListener {
+            viewModel!!.startGame(30)
+            displayHp()
+            lifeDialog.dismiss()
+        }
+
+        btnHp40.setOnClickListener {
+            viewModel!!.startGame(40)
+            displayHp()
+            lifeDialog.dismiss()
+        }
+
+        lifeDialog.show()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-
         binding = null
     }
 }
