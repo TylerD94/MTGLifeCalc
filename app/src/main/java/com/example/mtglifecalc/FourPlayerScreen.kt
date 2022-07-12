@@ -80,6 +80,7 @@ class FourPlayerScreen : AppCompatActivity() {
         binding?.tvP1Hp?.text = viewModel?.p1Hp.toString()
         binding?.tvP2Hp?.text = viewModel?.p2Hp.toString()
         binding?.tvP3Hp?.text = viewModel?.p3Hp.toString()
+        binding?.tvP4Hp?.text = viewModel?.p4Hp.toString()
     }
 
     private fun showSetLifeDialog() {

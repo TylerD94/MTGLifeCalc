@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.ViewModelProvider
 import com.example.mtglifecalc.databinding.ActivityTwoPlayerScreenBinding
 
-class TwoPlayerScreen : AppCompatActivity() {
+class TwoPlayerScreen : AppCompatActivity(), IUpdatedHp {
 
     private var binding: ActivityTwoPlayerScreenBinding? = null
     private var viewModel: PlayerViewModel? = null
@@ -94,5 +94,10 @@ class TwoPlayerScreen : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    override fun getHp(hp: Int) {
+        viewModel!!.startGame(hp)
+        displayHp()
     }
 }
