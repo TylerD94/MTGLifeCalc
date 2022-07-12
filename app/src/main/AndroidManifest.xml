@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mtglifecalc">
 
-    <uses-feature android:name="android.hardware.screen.portrait"/>
+    <uses-feature android:name="android.hardware.screen.portrait" />
 
     <application
         android:allowBackup="true"
@@ -12,17 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MTGLifeCalc">
         <activity
+            android:name=".SetLifeDialog"
+            android:exported="false" />
+        <activity
             android:name=".FourPlayerScreen"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ThreePlayerScreen"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".TwoPlayerScreen"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

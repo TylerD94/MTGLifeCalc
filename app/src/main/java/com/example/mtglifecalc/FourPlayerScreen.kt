@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.ViewModelProvider
 import com.example.mtglifecalc.databinding.ActivityFourPlayerScreenBinding
 
-class FourPlayerScreen : AppCompatActivity() {
+class FourPlayerScreen : AppCompatActivity(), IUpdatedHp {
 
     private var binding: ActivityFourPlayerScreenBinding? = null
     private var viewModel: PlayerViewModel? = null
@@ -72,7 +72,7 @@ class FourPlayerScreen : AppCompatActivity() {
         }
 
         binding?.btnSetStartingLife?.setOnClickListener {
-            showSetLifeDialog()
+            SetLifeDialog.showSetLifeDialog(this, this)
         }
     }
 
@@ -80,39 +80,16 @@ class FourPlayerScreen : AppCompatActivity() {
         binding?.tvP1Hp?.text = viewModel?.p1Hp.toString()
         binding?.tvP2Hp?.text = viewModel?.p2Hp.toString()
         binding?.tvP3Hp?.text = viewModel?.p3Hp.toString()
-    }
-
-    private fun showSetLifeDialog() {
-        val lifeDialog = Dialog(this)
-        lifeDialog.setContentView(R.layout.activity_set_starting_hp)
-
-        val btnHp20: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_20_hp)
-        val btnHp30: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_30_hp)
-        val btnHp40: AppCompatButton = lifeDialog.findViewById(R.id.btn_set_40_hp)
-
-        btnHp20.setOnClickListener {
-            viewModel!!.startGame(20)
-            displayHp()
-            lifeDialog.dismiss()
-        }
-
-        btnHp30.setOnClickListener {
-            viewModel!!.startGame(30)
-            displayHp()
-            lifeDialog.dismiss()
-        }
-
-        btnHp40.setOnClickListener {
-            viewModel!!.startGame(40)
-            displayHp()
-            lifeDialog.dismiss()
-        }
-
-        lifeDialog.show()
+        binding?.tvP4Hp?.text = viewModel?.p4Hp.toString()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    override fun getHp(hp: Int) {
+        viewModel!!.startGame(hp)
+        displayHp()
     }
 }
