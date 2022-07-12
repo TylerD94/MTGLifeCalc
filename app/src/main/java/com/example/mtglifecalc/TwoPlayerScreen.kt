@@ -52,7 +52,8 @@ class TwoPlayerScreen : AppCompatActivity() {
         }
 
         binding?.btnSetStartingLife?.setOnClickListener {
-            showSetLifeDialog()
+            var dialog = SetLifeDialog(1)
+            dialog.showSetLifeDialog(this)
         }
     }
 
